@@ -278,7 +278,10 @@ $drupal_hash_salt = '';
  * runtime settings and the .htaccess file for non-runtime settings. Settings
  * defined there should not be duplicated here so as to avoid conflict issues.
  */
-
+/**
+ * Override max_execution_time. Let apache handle the timeout.
+ */
+ini_set('max_execution_time', 0);
 /**
  * Some distributions of Linux (most notably Debian) ship their PHP
  * installations with garbage collection (gc) disabled. Since Drupal depends on
